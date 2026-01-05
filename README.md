@@ -10,8 +10,8 @@ PACC : Parallelism and Accelerators for Cluster Computing
 - @MoLeCoq (momo)
 
 ## 📁 Project Structure
-src/murb/implem/: Implementations of different versions
-src/test/implem/: Unit tests
+- src/murb/implem/: Implementations of different versions
+- src/test/implem/: Unit tests
 
 ## 🎯 Goals
 - [ ] Optimized sequential implementation
