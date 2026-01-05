@@ -5,9 +5,9 @@ Optimization of a celestial body motion simulator (N-Body problem) as part of th
 PACC : Parallelism and Accelerators for Cluster Computing
 
 ## 👥 Team
-- @Finsch (me)
+- @Finsch (jo)
 - @abporsche (dino)
-- @MoLeCoq (momo)
+- @mouad-zouhdi (momo)
 
 ## 📁 Project Structure
 - src/murb/implem/: Implementations of different versions
