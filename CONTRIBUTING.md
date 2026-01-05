@@ -33,8 +33,11 @@ refactor: optimisation mémoire
 
 ---
 
-
+comment commit. 
 git add .
 git status
 git commit -m "feat: ajout du projet MUrB original"
 git push origin main
+
+git commit -m "docs: modification README"
+git push origin develop
