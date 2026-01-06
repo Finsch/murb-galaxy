@@ -200,11 +200,11 @@ push feature.
 git checkout develop && git pull origin develop
 
 # Nouvelle feature
-git checkout -b feature/nom-feature
+git checkout feature/seq
 
 # Commit et push
 git add . && git commit -m "feat: description"
-git push origin feature/nom-feature
+git push origin feature/seq
 ```
 
 push dev.
