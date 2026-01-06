@@ -1,5 +1,5 @@
 
-### Guide de contribution - Projet MUrB
+### Guide de contribution - Projet MUrB v3
 
 #### 📋 Workflow Git
 
@@ -142,7 +142,6 @@ git checkout -b feature/nom-feature
 git add . && git commit -m "feat: description"
 git push origin feature/nom-feature
 ```
-
 
 ```bash
 git checkout develop
