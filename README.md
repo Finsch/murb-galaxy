@@ -2,7 +2,7 @@
 
 Optimization of a celestial body motion simulator (N-Body problem) as part of the PACC course at the Sorbonne University.
 
-![alt text](murb-se/galaxy.png)
+![galaxy simu|400](murb-se/galaxy.png)
 
 PACC : Parallelism and Accelerators for Cluster Computing
 
