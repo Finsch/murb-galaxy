@@ -73,7 +73,7 @@ git push origin feature/seq
 2. Clique sur "Pull requests" → "New pull request"
 3. Configure :
    - **base:** `develop` ← Où on veut merger
-   - **compare:** `feature/sequential` ← Ce qu'on veut merger
+   - **compare:** `feature/seq` ← Ce qu'on veut merger
 4. Remplis le template :
 ```
 Titre: [FEAT] Implémentation de l'optimisation séquentielle
@@ -111,20 +111,22 @@ Après (optim): 22 FPS (+46%)
 
 - Option 2 : Merge manuel
 ```bash
+# 1. Se mettre sur develop et récupérer la dernière version
 git checkout develop
 git pull origin develop
+
+# 2. Merge la feature
+git merge --no-ff feature/seq -m "feat: merge optimisation séquentielle"
+
+# OU pour un historique plus propre (recommande ceci) :
 git merge --squash feature/seq
-git commit -m "feat: implémentation de l'optimisation séquentielle"
+git commit -m "feat: implémentation optimisation séquentielle"
+
+# 3. Pousser les changements
 git push origin develop
-```
 
-#### Étape 5 : Nettoyage
-
-```
-# Supprime la branche locale
+# 4. Nettoyer (optionnel mais recommandé)
 git branch -d feature/seq
-
-# Supprime la branche sur GitHub
 git push origin --delete feature/seq
 ```
 
@@ -159,7 +161,7 @@ Quand TOUTES les features sont dans `develop` et que tout est validé :
 6. **Assign tous les membres** comme reviewers
 7. Après approbation, **"Merge pull request"**
 
-#### Option 2 : En ligne de commande //ici
+#### Option 2 : En ligne de commande 
 
 ```bash
 # 1. Synchronise tout
@@ -207,6 +209,15 @@ git add . && git commit -m "feat: description"
 git push origin feature/seq
 ```
 
+dev <- feature
+```bash
+git checkout develop
+git pull origin develop
+git merge --squash feature/seq
+git commit -m "feat: implémentation de l'optimisation séquentielle"
+git push origin develop
+```
+
 push dev.
 ```bash
 git checkout develop
@@ -230,4 +241,8 @@ git merge --no-ff develop -m "release: version finale projet MUrB"
 
 # 3. Pousse sur GitHub
 git push origin main
+```
+
+```bash
+git branch
 ```
