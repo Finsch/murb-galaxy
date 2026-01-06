@@ -129,7 +129,7 @@ git push origin --delete feature/seq
 ```
 
 ---
-#### ⚡ Commandes rapides
+#### ⚡ Commandes rapides //ici
 
 ```bash
 # Synchronisation
@@ -182,7 +182,7 @@ Quand TOUTES les features sont dans `develop` et que tout est validé :
 6. **Assign tous les membres** comme reviewers
 7. Après approbation, **"Merge pull request"**
 
-##### Option 2 : En ligne de commande
+##### Option 2 : En ligne de commande //ici
 
 ```bash
 # 1. Synchronise tout
