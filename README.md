@@ -1,4 +1,4 @@
-# Projet MUrB - Simulation N-Body
+## Projet MUrB - Simulation N-Body
 
 Optimization of a celestial body motion simulator (N-Body problem) as part of the PACC course at the Sorbonne University.
 
@@ -6,16 +6,16 @@ Optimization of a celestial body motion simulator (N-Body problem) as part of th
 
 PACC : Parallelism and Accelerators for Cluster Computing
 
-## 👥 Team
+#### 👥 Team
 - @Finsch (jo)
 - @abporsche (dino)
 - @mouad-zouhdi (momo)
 
-## 📁 Project Structure
+#### 📁 Project Structure
 - src/murb/implem/: Implementations of different versions
 - src/test/implem/: Unit tests
 
-## 🎯 Goals
+#### 🎯 Goals
 - [ ] Optimized sequential implementation
 - [ ] SIMD version with MIPP
 - [ ] Multi-threaded OpenMP version
