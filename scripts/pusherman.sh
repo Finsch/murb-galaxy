@@ -19,7 +19,6 @@ case $choice in
         echo "=== Commit et push sur $BRANCH_PUSH ==="
         git checkout $BRANCH_PUSH
         git add .
-        git status
         git commit -m "$COMMIT_MSG"
         git push origin $BRANCH_PUSH
         ;;
