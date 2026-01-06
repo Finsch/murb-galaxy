@@ -129,29 +129,6 @@ git push origin --delete feature/seq
 ```
 
 ---
-#### ⚡ Commandes rapides //ici
-
-```bash
-# Synchronisation
-git checkout develop && git pull origin develop
-
-# Nouvelle feature
-git checkout -b feature/nom-feature
-
-# Commit et push
-git add . && git commit -m "feat: description"
-git push origin feature/nom-feature
-```
-
-```bash
-git checkout develop
-git add .
-git status
-git commit -m "docs: mis à jour du CONTRIBUTING.md"
-git push origin develop
-```
-
----
 
 ###### petit resumé.
 
@@ -170,7 +147,7 @@ git push origin develop
 
 Quand TOUTES les features sont dans `develop` et que tout est validé :
 
-##### Option 1 : Via GitHub (recommandé)
+##### Option 1 : Via GitHub 
 
 1. Aller sur GitHub → Pull requests → New
 2. Configurer :
@@ -212,3 +189,45 @@ git push origin main
 - [ ] Aucun bug connu
 
 ---
+
+
+---
+#### ⚡ Commandes rapides //ici
+
+push feature.
+```bash
+# Synchronisation
+git checkout develop && git pull origin develop
+
+# Nouvelle feature
+git checkout feature/seq
+
+# Commit et push
+git add . && git commit -m "feat: description"
+git push origin feature/seq
+```
+
+push dev.
+```bash
+git checkout develop
+git add .
+git status
+git commit -m "docs: mis à jour du CONTRIBUTING.md"
+git push origin develop
+```
+
+main <- dev.
+```bash
+# 1. Synchronise tout
+git checkout main
+git pull origin main
+git checkout develop
+git pull origin develop
+
+# 2. Merge develop dans main
+git checkout main
+git merge --no-ff develop -m "release: version finale projet MUrB"
+
+# 3. Pousse sur GitHub
+git push origin main
+```
