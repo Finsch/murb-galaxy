@@ -1,15 +1,15 @@
 
-### Guide de contribution - Projet MUrB v3
+## Guide de contribution - Projet MUrB v3
 
-#### 📋 Workflow Git
+### 📋 Workflow Git
 
-##### Types de branches
+#### Types de branches
 
 - **`main`** : Code stable et validé (version finale)
 - **`develop`** : Code en cours d'intégration
 - **`feature/*`** : Nouvelles fonctionnalités
 
-##### Convention de nommage des branches
+#### Convention de nommage des branches
 
 ```
 feature/seq           # Optimisation séquentielle
@@ -19,7 +19,7 @@ feature/gpu           # Version GPU
 feature/hybrid        # Version hétérogène
 ```
 
-##### Messages de commit
+#### Messages de commit
 
 Utiliser le format conventionnel :
 
@@ -30,10 +30,10 @@ Utiliser le format conventionnel :
 
 ---
 
-#### 🚀 Guide pas à pas.
+### 🚀 Guide pas à pas.
 
 Situation : Bob travaille sur l'optimisation séquentielle.
-##### Étape 1 : Bob prépare son environnement
+#### Étape 1 : Bob prépare son environnement
 
 ```bash
 # 1. Clone le dépôt
@@ -51,7 +51,7 @@ git checkout -b feature/seq
 git push -u origin feature/seq
 ```
 
-##### Étape 2 : Bob développe localement
+#### Étape 2 : Bob développe localement
 
 ```bash
 # Travaille sur ton implémentation
@@ -67,7 +67,7 @@ git commit -m "feat: implémentation optimisation séquentielle"
 git push origin feature/seq
 ```
 
-##### Étape 3 : Bob crée une Pull Request (PR)
+#### Étape 3 : Bob crée une Pull Request (PR)
 
 1. Va sur https://github.com/Finsch/murb-galaxy
 2. Clique sur "Pull requests" → "New pull request"
@@ -103,7 +103,7 @@ Après (optim): 22 FPS (+46%)
 - Testent localement si besoin
 - Donnent leur approbation ("Approve") ou commentaires
 
-##### Étape 4 : Après approbation, merge de la feature.
+#### Étape 4 : Après approbation, merge de la feature.
 
 - Option 1 : Merge via GitHub (recommandé)
 	- Clique "Merge pull request" 
@@ -118,7 +118,7 @@ git commit -m "feat: implémentation de l'optimisation séquentielle"
 git push origin develop
 ```
 
-##### Étape 5 : Nettoyage
+#### Étape 5 : Nettoyage
 
 ```
 # Supprime la branche locale
@@ -130,7 +130,7 @@ git push origin --delete feature/seq
 
 ---
 
-###### petit resumé.
+##### petit resumé.
 
 | Étape | Qui        | Action                              | Résultat                  |
 | ----- | ---------- | ----------------------------------- | ------------------------- |
@@ -143,11 +143,11 @@ git push origin --delete feature/seq
 
 ---
 
-#### 🔄 Dernière étape : Merge `develop` → `main`
+### 🔄 Dernière étape : Merge `develop` → `main`
 
 Quand TOUTES les features sont dans `develop` et que tout est validé :
 
-##### Option 1 : Via GitHub 
+#### Option 1 : Via GitHub 
 
 1. Aller sur GitHub → Pull requests → New
 2. Configurer :
@@ -159,7 +159,7 @@ Quand TOUTES les features sont dans `develop` et que tout est validé :
 6. **Assign tous les membres** comme reviewers
 7. Après approbation, **"Merge pull request"**
 
-##### Option 2 : En ligne de commande //ici
+#### Option 2 : En ligne de commande //ici
 
 ```bash
 # 1. Synchronise tout
@@ -178,7 +178,7 @@ git push origin main
 
 ---
 
-##### 📋 Checklist finale avant merge develop→main
+#### 📋 Checklist finale avant merge develop→main
 
 - [ ] Toutes les implémentations sont dans `develop`
 - [ ] Tous les tests passent (`./bin/murb-test`)
@@ -192,7 +192,7 @@ git push origin main
 
 
 ---
-#### ⚡ Commandes rapides //ici
+### ⚡ Commandes rapides //ici
 
 push feature.
 ```bash
