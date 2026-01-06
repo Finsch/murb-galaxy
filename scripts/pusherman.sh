@@ -4,7 +4,7 @@
 BRANCH_PUSH="develop"
 BRANCH_MERGE_FROM="develop"
 BRANCH_MERGE_TO="main"
-COMMIT_MSG="docs: mise à jour documentation"
+COMMIT_MSG="docs: ajouts de scripts pour automatiser"
 MERGE_MSG="release: dev → main"
 
 echo "=== Menu Git Operations ==="
