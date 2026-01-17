@@ -31,7 +31,9 @@ case $choice in
         # run the code. //ici
         cd build
         # ./bin/murb -n 1000 -i 1000 -v
-        ./bin/murb -n 1000 -i 1000 -v --nv --im cpu+naive
+        #here
+        # ./bin/murb -n 1000 -i 1000 -v --nv --im cpu+naive
+        ./bin/murb -n 1000 -i 1000 -v --nv --im cpu+optim
 
         # final test.
         # ./bin/murb -n 30000 -i 10000 -v --nv --im [ImplTag]
