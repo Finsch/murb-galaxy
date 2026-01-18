@@ -6,7 +6,7 @@
 #include <random>
 #include <string>
 
-#include "SimulationNBodyNaive.hpp"
+#include "SimulationNBodyNaive.hpp" //here
 
 void test_nbody_dumb(const size_t n, const float soft, const float dt, const size_t nIte, const std::string &scheme,
                      const float eps)
@@ -14,7 +14,7 @@ void test_nbody_dumb(const size_t n, const float soft, const float dt, const siz
     SimulationNBodyNaive simuRef(n, scheme, soft);
     simuRef.setDt(dt);
 
-    SimulationNBodyNaive simuTest(n, scheme, soft);
+    SimulationNBodyNaive simuTest(n, scheme, soft); //here
     simuTest.setDt(dt);
 
     const float *xRef = simuRef.getBodies().getDataSoA().qx.data();
@@ -41,7 +41,7 @@ void test_nbody_dumb(const size_t n, const float soft, const float dt, const siz
     }
 }
 
-TEST_CASE("n-body - Dumb", "[dmb]")
+TEST_CASE("n-body - Dumb", "[dmb]") //here
 {
     SECTION("fp32 - n=13 - i=1 - random") { test_nbody_dumb(13, 2e+08, 3600, 1, "random", 1e-3); }
     SECTION("fp32 - n=13 - i=100 - random") { test_nbody_dumb(13, 2e+08, 3600, 100, "random", 5e-3); }
