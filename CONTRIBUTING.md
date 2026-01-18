@@ -64,7 +64,7 @@ git add src/murb/implem/SimulationNBodyOptim.cpp
 git commit -m "feat: implémentation optimisation séquentielle"
 
 # Pousse tes changements
-git push origin feature/seq
+git push -u origin feature/seq
 ```
 
 #### Étape 3 : Bob crée une Pull Request (PR)
