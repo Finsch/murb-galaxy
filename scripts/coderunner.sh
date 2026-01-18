@@ -17,7 +17,7 @@ case $choice in
         cmake .. -G"Unix Makefiles" -DCMAKE_CXX_COMPILER=g++ \
                 -DCMAKE_BUILD_TYPE=RelWithDebInfo \
                 -DCMAKE_CXX_FLAGS_RELWITHDEBINFO="-O3 -g" \
-                -DCMAKE_CXX_FLAGS="-Wall -funroll-loops -march=native"
+                -DCMAKE_CXX_FLAGS="-Wall -funroll-loops -march=native -fopenmp"
         make -j4
         echo "✅ Compilation terminée"
         echo ""
@@ -34,6 +34,8 @@ case $choice in
         #here
         # ./bin/murb -n 1000 -i 1000 -v --nv --im cpu+naive
         # ./bin/murb -n 1000 -i 1000 -v --nv --im cpu+optim
+        export OMP_NUM_THREADS=4
+        export OMP_SCHEDULE="static,1"
         ./bin/murb -n 1000 -i 1000 -v --nv --im cpu+omp
 
         # final test.

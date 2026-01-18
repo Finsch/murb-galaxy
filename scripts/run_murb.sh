@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=murb_job
-#SBATCH --output=murb_job_out_%j.out
-#SBATCH --error=murb_job_err_%j.err
+#SBATCH --output=job_out_%j.out
+#SBATCH --error=job_err_%j.err
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --time=00:02:00
@@ -31,3 +31,6 @@ echo ""
 echo "=== exécution de la simulation ==="
 ./bin/murb -n 1000 -i 1000 -v --nv --im cpu+naive
 # ./bin/murb -n 1000 -i 1000 -v --nv --im cpu+optim
+# export OMP_NUM_THREADS=4
+# export OMP_SCHEDULE="static,1"
+# ./bin/murb -n 1000 -i 1000 -v --nv --im cpu+omp
