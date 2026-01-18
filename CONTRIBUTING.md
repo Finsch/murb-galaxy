@@ -244,5 +244,6 @@ git push origin main
 ```
 
 ```bash
+# how maany branches?
 git branch
 ```
