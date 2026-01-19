@@ -48,8 +48,6 @@ case $choice in
         ;;
 esac
 
-echo "done."
-
 
 # chmod +x ./scripts/coderunner.sh 
 # we are at murb-galaxy
