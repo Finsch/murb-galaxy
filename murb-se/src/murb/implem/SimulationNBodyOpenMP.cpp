@@ -103,11 +103,11 @@ void SimulationNBodyOpenMP::computeBodiesAcceleration()
         // 3. Réduction avec section critique
         #pragma omp critical
         {
-            for (unsigned long iBody = 0; iBody < n; iBody++) {
-                this->accelerations[iBody].ax += local_accelerations[iBody].ax;
-                this->accelerations[iBody].ay += local_accelerations[iBody].ay;
-                this->accelerations[iBody].az += local_accelerations[iBody].az;
-            }
+        for (unsigned long iBody = 0; iBody < n; iBody++) {
+            this->accelerations[iBody].ax += local_accelerations[iBody].ax;
+            this->accelerations[iBody].ay += local_accelerations[iBody].ay;
+            this->accelerations[iBody].az += local_accelerations[iBody].az;
+        }
         }
     }
 }
