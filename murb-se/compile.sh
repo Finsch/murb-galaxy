@@ -7,9 +7,12 @@ make clean && make -j4
 
 # Différentes tailles de problème
 for n in 500 1000 2000 3000 5000 8000 10000; do
-    echo "=== Sans SIMD (n=$n) ==="
+    echo "=== CPU Naive (n=$n) ==="
+    ./bin/murb -n $n -i 1000 --nv --im cpu+naive | grep "Entire"
+    echo "=== CPU Optim w/ symmetry (n=$n) ==="
     ./bin/murb -n $n -i 1000 --nv --im cpu+optim | grep "Entire"
-    echo "=== Avec SIMD (n=$n) ==="
+    echo "=== CPU SIMD w/o symmetry (n=$n) ==="
     ./bin/murb -n $n -i 1000 --nv --im cpu+simd | grep "Entire"
     echo ""
 done
+
