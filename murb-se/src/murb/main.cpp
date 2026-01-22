@@ -23,6 +23,8 @@
 #include "implem/SimulationNBodyOptim.hpp"
 #include "implem/SimulationNBodyOpenMP.hpp"
 #include "implem/SimulationNBodyGPU.hpp"
+#include "implem/SimulationNBodySIMD.hpp"
+#include "mipp.h"
 
 /* global variables */
 unsigned long NBodies;               /*!< Number of bodies. */
@@ -83,6 +85,7 @@ void argsReader(int argc, char **argv)
                      "\t\t\t - \"cpu+optim\"\n"
                      "\t\t\t - \"cpu+omp\"\n"
                      "\t\t\t - \"gpu+optim\"\n"
+                     "\t\t\t - \"cpu+simd\"\n"  // <= SIMD TAG
                      "\t\t\t ----";
     faculArgs["-soft"] = "softeningFactor";
     docArgs["-soft"] = "softening factor.";
@@ -200,6 +203,10 @@ SimulationNBodyInterface *createImplem()
     }
     else if (ImplTag == "gpu+optim") {
         simu = new SimulationNBodyGPU(NBodies, BodiesScheme, Softening);
+    else if (ImplTag == "cpu+simd") {
+        simu = new SimulationNBodySIMD(NBodies, BodiesScheme, Softening);
+        // affiche le nombre de floats possible en focntion du hardware
+        std::cout << "SIMD_SIZE: " << mipp::N<float>() << std::endl;
     }
     else {
         std::cout << "Implementation '" << ImplTag << "' does not exist... Exiting." << std::endl;
