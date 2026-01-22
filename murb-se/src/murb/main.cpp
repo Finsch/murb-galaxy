@@ -203,6 +203,7 @@ SimulationNBodyInterface *createImplem()
     }
     else if (ImplTag == "gpu+optim") {
         simu = new SimulationNBodyGPU(NBodies, BodiesScheme, Softening);
+    }
     else if (ImplTag == "cpu+simd") {
         simu = new SimulationNBodySIMD(NBodies, BodiesScheme, Softening);
         // affiche le nombre de floats possible en focntion du hardware
