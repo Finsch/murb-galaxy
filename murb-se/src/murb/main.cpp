@@ -21,6 +21,8 @@
 #include "implem/SimulationNBodyNaive.hpp"
 //here
 #include "implem/SimulationNBodyOptim.hpp"
+#include "implem/SimulationNBodyOpenMP.hpp"
+#include "implem/SimulationNBodyGPU.hpp"
 #include "implem/SimulationNBodySIMD.hpp"
 #include "mipp.h"
 
@@ -81,6 +83,8 @@ void argsReader(int argc, char **argv)
     docArgs["-im"] = "code implementation tag:\n"
                      "\t\t\t - \"cpu+naive\"\n"
                      "\t\t\t - \"cpu+optim\"\n"
+                     "\t\t\t - \"cpu+omp\"\n"
+                     "\t\t\t - \"gpu+optim\"\n"
                      "\t\t\t - \"cpu+simd\"\n"  // <= SIMD TAG
                      "\t\t\t ----";
     faculArgs["-soft"] = "softeningFactor";
@@ -194,6 +198,11 @@ SimulationNBodyInterface *createImplem()
     else if (ImplTag == "cpu+optim") {
         simu = new SimulationNBodyOptim(NBodies, BodiesScheme, Softening);
     }
+    else if (ImplTag == "cpu+omp") {
+        simu = new SimulationNBodyOpenMP(NBodies, BodiesScheme, Softening);
+    }
+    else if (ImplTag == "gpu+optim") {
+        simu = new SimulationNBodyGPU(NBodies, BodiesScheme, Softening);
     else if (ImplTag == "cpu+simd") {
         simu = new SimulationNBodySIMD(NBodies, BodiesScheme, Softening);
         // affiche le nombre de floats possible en focntion du hardware
