@@ -29,26 +29,8 @@ echo "✅ Compilation terminée"
 echo ""
 
 echo "=== exécution de la simulation ==="
-#./bin/murb -n 1000 -i 1000 -v --nv --im cpu+naive
-# ./bin/murb -n 1000 -i 1000 -v --nv --im cpu+optim
-# export OMP_NUM_THREADS=8
-# export OMP_SCHEDULE="static,1"
-# export OMP_SCHEDULE="dynamic,4"
-# ./bin/murb -n 1000 -i 1000 -v --nv --im cpu+omp
-# ./bin/murb -n 1000 -i 1000 -v --nv --im cpu+simd
-./bin/murb -n 1000 -i 1000 -v --nv --im gpu+optim 
+echo "   cpu+gpu+naive:"
+./bin/murb -n 1000 -i 1000 -v --nv --im gpu+optim
 
+echo "=== validation par tests ==="
 ./bin/murb-test
-
-# echo "Séquentiel:"
-# ./bin/murb -n 500 -i 50 --nv --im cpu+optim 2>&1 | grep "FPS"
-
-# echo ""
-# echo "=== Exploration OpenMP ==="
-# for t in 1 2 4 8 12 14; do
-#     echo "   Threads=$t:"
-# #     export OMP_SCHEDULE="static,1"
-#     export OMP_SCHEDULE="dynamic,4"
-#     export OMP_NUM_THREADS=$t 
-#     ./bin/murb -n 500 -i 50 --nv --im cpu+omp 2>&1 | grep "FPS"
-# done

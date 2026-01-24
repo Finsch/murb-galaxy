@@ -51,10 +51,10 @@ void SimulationNBodyOpenMP::computeBodiesAcceleration()
     {
         // 1. Tableau local par thread (évite false sharing)
         std::vector<accAoS_t<float>> local_accelerations(n);
-        for (unsigned long idx = 0; idx < n; idx++) {
-            local_accelerations[idx].ax = 0.f;
-            local_accelerations[idx].ay = 0.f;
-            local_accelerations[idx].az = 0.f;
+        for (unsigned long iBody = 0; iBody < n; iBody++) {
+            local_accelerations[iBody].ax = 0.f;
+            local_accelerations[iBody].ay = 0.f;
+            local_accelerations[iBody].az = 0.f;
         }
 
         // 2. Parallélisation de la boucle externe SEULEMENT
