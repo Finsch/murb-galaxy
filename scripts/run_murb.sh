@@ -12,8 +12,8 @@
 date
 hostname
 
-# cd ~/porkypig/murb-se
-cd ~/porkypig/murb-mo
+cd ~/porkypig/murb-se
+# cd ~/porkypig/murb-mo
 
 # compile.
 echo "=== Compilation ==="
@@ -29,8 +29,8 @@ echo "✅ Compilation terminée"
 echo ""
 
 echo "=== exécution de la simulation ==="
-echo "   cpu+gpu+naive:"
-./bin/murb -n 1000 -i 1000 -v --nv --im gpu+optim
+echo "   gpu+optim:"
+./bin/murb -n 1000 -i 1000 -v --nv --im gpu+optim 2>&1 | grep "FPS"
 
 echo "=== validation par tests ==="
 ./bin/murb-test
